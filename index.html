@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Namu darbai DOM</title>
+    <style>
+      body {
+        padding: 150px 0;
+        width: 100%;
+        text-align: center;
+        background: linear-gradient(60deg, #1cb5e0 5%, #000851 100%);
+
+        background-attachment: fixed;
+      }
+      p {
+        font-size: 40px;
+        width: 800px;
+        text-align: center;
+        margin: 0 auto;
+      }
+      header {
+        display: flex;
+        column-gap: 10px;
+        justify-content: center;
+        margin: 0 auto;
+        width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Welcome to world famous - and most boring "Some numbers" game!</p>
+    <header>
+      <h1 id="player1">0</h1>
+      <h1>to</h1>
+      <h1 id="player2">0</h1>
+    </header>
+    <main>
+      <label for="input">Playing to:</label><br /><br />
+      <input id="inputMain" type="number" /><br /><br />
+      <button id="button1">Player one</button>
+      <button id="button2">Player two</button>
+      <button id="reset">Reset</button>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
