@@ -1,4 +1,6 @@
 "use strict";
+var lableNumber = document.getElementById("lable");
+document.setE;
 
 var buttonOne = document.getElementById("button1");
 var buttonTwo = document.getElementById("button2");
@@ -21,7 +23,8 @@ buttonOne.addEventListener("click", function () {
     console.log(`1.${numberOne}`);
     playerOneScore.textContent = numberOne;
   } else {
-    playerOneScore.style.color = "red";
+    playerOneScore.style.color = "green";
+    document.getElementById("button2").disabled = true;
   }
 });
 //-------------------Player2-----------------------------------
@@ -32,7 +35,8 @@ buttonTwo.addEventListener("click", function () {
     console.log(`2.${numberTwo}`);
     playerTwoScore.textContent = numberTwo;
   } else {
-    playerTwoScore.style.color = "red";
+    playerTwoScore.style.color = "green";
+    document.getElementById("button1").disabled = true;
   }
 });
 //-------------------RESET-----------------------------------
@@ -45,6 +49,8 @@ reset.addEventListener("click", function () {
   numberOne = 0;
   numberTwo = 0;
   max = 0;
+  document.getElementById("button1").disabled = false;
+  document.getElementById("button2").disabled = false;
 });
 
 // var numberOne = parseInt(playerOneScore.textContent);
