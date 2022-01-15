@@ -3,40 +3,45 @@
 var buttonOne = document.getElementById("button1");
 var buttonTwo = document.getElementById("button2");
 var reset = document.getElementById("reset");
-// var playerOneScore = document.getElementById("player1").textContent;???????????
 var playerOneScore = document.getElementById("player1");
 var playerTwoScore = document.getElementById("player2");
 var input = document.getElementById("inputMain");
 
-var numberOne = Number(playerOneScore.textContent);
-var numberTwo = Number(playerTwoScore.textContent);
-var max = Number(input.value); //?????????? scope?
-var text = document.getElementsByTagName("p")[1];
+var zero1 = 0;
+playerOneScore.textContent = `${zero1}`;
 
-text.innerText = `Playing to: ${input.value}`;
+var zero2 = 0;
+playerTwoScore.textContent = `${zero2}`;
 
+var playtill = 0;
+input.value = `${playtill}`;
+//-------------------Counter-----------------------------------
+
+var input1 = input;
+const log = document.getElementById("till");
+
+input1.addEventListener("input", update);
+
+function update(x) {
+  log.textContent = ` ${x.target.value}`;
+}
 //-------------------Player1-----------------------------------
 buttonOne.addEventListener("click", function () {
-  var max = Number(input.value);
-
-  if (numberOne < max) {
-    // kai <=  leidzia skaicius iki 1+???
-    numberOne++;
-    console.log(`1.${numberOne}`);
-    playerOneScore.textContent = numberOne;
+  if (zero1 < input.value) {
+    zero1++;
+    playerOneScore.textContent = `${zero1}`;
   } else {
-    playerOneScore.style.color = "green";
+    playerOneScore.style.color = "red";
     document.getElementById("button2").disabled = true;
   }
 });
 //-------------------Player2-----------------------------------
 buttonTwo.addEventListener("click", function () {
-  var max = Number(input.value);
-  if (numberTwo < max) {
-    numberTwo++;
-    playerTwoScore.textContent = numberTwo;
+  if (zero2 < input.value) {
+    zero2++;
+    playerTwoScore.textContent = `${zero2}`;
   } else {
-    playerTwoScore.style.color = "green";
+    playerTwoScore.style.color = "red";
     document.getElementById("button1").disabled = true;
   }
 });
@@ -46,28 +51,11 @@ reset.addEventListener("click", function () {
   playerTwoScore.style.color = "black";
   playerOneScore.textContent = 0;
   playerTwoScore.textContent = 0;
+  zero1 = 0;
+  zero2 = 0;
   input.value = 0;
-  numberOne = 0;
-  numberTwo = 0;
-  max = 0;
   document.getElementById("button1").disabled = false;
   document.getElementById("button2").disabled = false;
+  log.textContent = 0;
 });
-document.getElementById("lable").createTextNode(max);
 
-// var numberOne = parseInt(playerOneScore.textContent);
-// var max = number(input1.value);
-
-// buttonOne.addEventListener("click", function () {
-//   if (numberOne < max) {
-//     // max = input1.value;
-//     console.log(max);
-//     numberOne++;
-//     // playerOneScore.textContent = numberOne;
-//   }
-// });
-
-// reset.addEventListener("click", function () {
-//   numberOne = 0;
-//   playerOneScore.textContent = numberOne;
-// });
