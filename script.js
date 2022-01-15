@@ -1,6 +1,4 @@
 "use strict";
-var lableNumber = document.getElementById("lable");
-document.setE;
 
 var buttonOne = document.getElementById("button1");
 var buttonTwo = document.getElementById("button2");
@@ -10,13 +8,17 @@ var playerOneScore = document.getElementById("player1");
 var playerTwoScore = document.getElementById("player2");
 var input = document.getElementById("inputMain");
 
-var numberOne = parseInt(playerOneScore.textContent);
-var numberTwo = parseInt(playerTwoScore.textContent);
-var max = parseInt(input.value); //?????????? scope?
+var numberOne = Number(playerOneScore.textContent);
+var numberTwo = Number(playerTwoScore.textContent);
+var max = Number(input.value); //?????????? scope?
+var text = document.getElementsByTagName("p")[1];
+
+text.innerText = `Playing to: ${input.value}`;
 
 //-------------------Player1-----------------------------------
 buttonOne.addEventListener("click", function () {
-  var max = parseInt(input.value);
+  var max = Number(input.value);
+
   if (numberOne < max) {
     // kai <=  leidzia skaicius iki 1+???
     numberOne++;
@@ -29,10 +31,9 @@ buttonOne.addEventListener("click", function () {
 });
 //-------------------Player2-----------------------------------
 buttonTwo.addEventListener("click", function () {
-  var max = parseInt(input.value);
+  var max = Number(input.value);
   if (numberTwo < max) {
     numberTwo++;
-    console.log(`2.${numberTwo}`);
     playerTwoScore.textContent = numberTwo;
   } else {
     playerTwoScore.style.color = "green";
@@ -52,6 +53,7 @@ reset.addEventListener("click", function () {
   document.getElementById("button1").disabled = false;
   document.getElementById("button2").disabled = false;
 });
+document.getElementById("lable").createTextNode(max);
 
 // var numberOne = parseInt(playerOneScore.textContent);
 // var max = number(input1.value);
