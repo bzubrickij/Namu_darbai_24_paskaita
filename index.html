@@ -26,19 +26,28 @@
         margin: 0 auto;
         width: 400px;
       }
+      .inline p {
+        font-size: 20px;
+        display: inline;
+      }
+      .inline {
+        padding: 10px;
+      }
     </style>
   </head>
   <body>
     <p>Welcome to world famous - and most boring "Some numbers" game!</p>
     <header>
-      <h1 id="player1">0</h1>
+      <h1 id="player1"></h1>
       <h1>to</h1>
-      <h1 id="player2">0</h1>
+      <h1 id="player2"></h1>
     </header>
     <main>
-      <p style="font-size: 20px"></p>
-      <br />
-      <!-- <label id="lable-1" for="inputMain">Playing to:</label><br /><br /> -->
+      <div class="inline">
+        <p>Play till:</p>
+        <p id="till"></p>
+      </div>
+
       <input id="inputMain" type="number" /><br /><br />
       <button id="button1">Player one</button>
       <button id="button2">Player two</button>
@@ -47,3 +56,4 @@
     <script src="script.js"></script>
   </body>
 </html>
+
